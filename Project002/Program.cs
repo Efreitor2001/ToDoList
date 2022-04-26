@@ -19,26 +19,112 @@ while (line1 == "")
     Console.WriteLine("Введите ваше дело корректно: ");
     line1 = Console.ReadLine();
 }
-if (line1 != "/list")
+
+switch (line1[0])
 {
-    while ((line = sr1.ReadLine()) != null)
-    {
-        sw1.WriteLine(line);
-    }
-    sw1.WriteLine(line1);
-    sr1.Close();
-    sw1.Close();
+    case '/':
+
+        switch (line1)
+        {
+            case "/done":
+                int i = 1;
+                int ui = 0;
+                Console.Write("Введите номер дела, которое хотите завершить: ");
+                ui = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Список ваших дел:");
+                while ((line = sr1.ReadLine()) != null)
+                {
+                    if (i == ui)
+                    {
+                        Console.WriteLine(i + ". " + line + " ☑");
+                        sw1.WriteLine(line + " ☑");
+                    }
+                    else
+                    {
+                        Console.WriteLine(i + ". " + line);
+                        sw1.WriteLine(line);
+                    }
+                    i++;
+                }
+                sr1.Close();
+                sw1.Close();
+                break;
+            case "/help":
+                Console.WriteLine("Список доступных команд:");
+                Console.WriteLine("/list - покажет текущий список дел");
+                Console.WriteLine("/done - завершить выбранное дело");
+                while ((line = sr1.ReadLine()) != null)
+                {
+                    sw1.WriteLine(line);
+                }
+                sr1.Close();
+                sw1.Close();
+                break;
+            case "/list":
+                Console.WriteLine("Список ваших дел:");
+                i = 1;
+                while ((line = sr1.ReadLine()) != null)
+                {
+                    Console.WriteLine(i + ". " + line);
+                    sw1.WriteLine(line);
+                    i++;
+                }
+                sr1.Close();
+                sw1.Close();
+                break;
+            default:
+                Console.WriteLine("Ошибка! Такой команды не существует!!!");
+                while ((line = sr1.ReadLine()) != null)
+                {
+                    sw1.WriteLine(line);
+                }
+                sr1.Close();
+                sw1.Close();
+                break;
+
+        }
+        break;
+    default:
+        while ((line = sr1.ReadLine()) != null)
+        {
+            sw1.WriteLine(line);
+        }
+        sw1.WriteLine(line1);
+        sr1.Close();
+        sw1.Close();
+        break;
 }
-else
-{
-    Console.WriteLine("Список ваших дел:");
-    int i = 0;
-    while ((line = sr1.ReadLine()) != null)
-    {
-        i++;
-        Console.WriteLine(i + ". " + line);
-        sw1.WriteLine(line);
-    }
-    sr1.Close();
-    sw1.Close();
-}
+// }
+//     case "/help":
+//         Console.WriteLine("Список доступных команд:");
+// Console.WriteLine("/list - покажет текущий список дел");
+// while ((line = sr1.ReadLine()) != null)
+// {
+//     sw1.WriteLine(line);
+// }
+// sr1.Close();
+// sw1.Close();
+// break;
+//     case "/list":
+//         Console.WriteLine("Список ваших дел:");
+// int i = 0;
+// while ((line = sr1.ReadLine()) != null)
+// {
+//     i++;
+//     Console.WriteLine(i + ". " + line);
+//     sw1.WriteLine(line);
+// }
+// sr1.Close();
+// sw1.Close();
+// break;
+// default:
+//         while ((line = sr1.ReadLine()) != null)
+// {
+//     sw1.WriteLine(line);
+// }
+// sw1.WriteLine(line1);
+// sr1.Close();
+// sw1.Close();
+// break;
+
+// }
