@@ -94,37 +94,3 @@ switch (line1[0])
         sw1.Close();
         break;
 }
-// }
-//     case "/help":
-//         Console.WriteLine("Список доступных команд:");
-// Console.WriteLine("/list - покажет текущий список дел");
-// while ((line = sr1.ReadLine()) != null)
-// {
-//     sw1.WriteLine(line);
-// }
-// sr1.Close();
-// sw1.Close();
-// break;
-//     case "/list":
-//         Console.WriteLine("Список ваших дел:");
-// int i = 0;
-// while ((line = sr1.ReadLine()) != null)
-// {
-//     i++;
-//     Console.WriteLine(i + ". " + line);
-//     sw1.WriteLine(line);
-// }
-// sr1.Close();
-// sw1.Close();
-// break;
-// default:
-//         while ((line = sr1.ReadLine()) != null)
-// {
-//     sw1.WriteLine(line);
-// }
-// sw1.WriteLine(line1);
-// sr1.Close();
-// sw1.Close();
-// break;
-
-// }
